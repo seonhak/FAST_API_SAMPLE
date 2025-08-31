@@ -1,0 +1,10 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/.git": false
+    },
+    "editor.mouseWheelZoom": true,
+    "debug.allowBreakpointsEverywhere": true,
+    "debug.confirmOnExit": "never",
+    "debug.showBreakpointsInOverviewRuler": true
+}
