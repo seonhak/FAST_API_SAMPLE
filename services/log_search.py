@@ -1,11 +1,11 @@
 from schemas import LogDocument
-from core.exceptions import ServiceError
+from core import *
 from fastapi import status
 async def search_log_documents(query: str):
     if query == "error":
-        raise ServiceError("테스트용 서비스 에러 발생!", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        raise ServiceError(message=ExceptionEnum.E_INTERNAL_SERVER_ERROR, status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
     if query == "notfound":
-        raise ServiceError("문서를 찾을 수 없습니다.", status_code=status.HTTP_404_NOT_FOUND, data=None)
+        raise ServiceError(message=ExceptionEnum.E_DOC_NOT_FOUND_ERROR, status_code=status.HTTP_404_NOT_FOUND, data=None)
     # 실제 Azure Search 연동 대신 임시 결과 반환
     return [
         LogDocument(
