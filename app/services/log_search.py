@@ -1,5 +1,5 @@
-from schemas import LogDocument
-from core import *
+from app.schemas import LogDocument
+from app.core import *
 from fastapi import status
 async def search_log_documents(query: str):
     if query == "error":

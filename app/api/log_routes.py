@@ -1,7 +1,7 @@
 from fastapi import APIRouter, status
-from services import search_log_documents
-from schemas import LogDocument, LogQuery, CommonResponse
 from typing import List
+from app.services import search_log_documents
+from app.schemas import LogDocument, LogQuery, CommonResponse
 
 router = APIRouter()
 

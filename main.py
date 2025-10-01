@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from api import log_router
+import app.api.log_routes as log_routes
 
 app = FastAPI()
 
-app.include_router(log_router, prefix="/logs")
+app.include_router(log_routes.router, prefix="/logs")
 
 @app.get("/")
 async def read_root():
